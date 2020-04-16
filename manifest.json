@@ -1,0 +1,23 @@
+{
+  "name": "CasaFranLop",
+  "short_name": "CasaFranLop",
+  "description": "System Laika",
+  "scope": ".",
+  "start_url": "https://proyecto-utt-1e787.web.app/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "black-translucent",
+  "background_color": "#d5f4ef",
+  "icons": [
+    {
+      "src": "iconos/touch-icon-iphone.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "iconos/touch-icon-ipad-retina.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    }
+  ]
+}

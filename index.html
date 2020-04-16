@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <!-- app -->
+    <meta name="Cielo" content="Add to Home">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-startup-image" href="splash/launch-640x1136.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-1125x2436.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-1536x2048.png" media="(min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-1668x2224.png" media="(min-device-width: 834px) and (max-device-width: 834px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+    <link rel="apple-touch-startup-image" href="splash/launch-2048x2732.png" media="(min-device-width: 1024px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait)">
+  
+    <meta name="msapplication-TileColor" content="#d5f4ef">
+    <meta name="theme-color" content="#d5f4ef">
+    
+    <!-- iconos -->
+    <link rel="apple-touch-icon" href="iconos/touch-icon-iphone.png">
+    <link rel="shortcut icon" sizes="16x16" href="iconos/icon-16x16.png">
+    <link rel="shortcut icon" sizes="196x196" href="iconos/icon-196x196.png">
+    <link rel="apple-touch-icon-precomposed" href="iconos/icon-152x152.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      
+    <!-- end app -->
+    <title>FranLop Home</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+  
+</head>
+<body>
+  <!-- Inicia Vista de Registro -->
+  <div class="container" id="registro">
+    <div class="row text-center">
+      <div class="col mt-5 mb-5 ">
+        <img src="iconos/icon-196x196.png" class="img-thumbnail">
+      </div>
+    </div>
+    <div class="row">
+      <form class="col-12">
+        <div class="form-group">
+          <label for="nombresR" class="text-white">Nombres</label>
+          <input type="text" id="nombresR" class="form-control" placeholder="Nombres">
+        </div>
+        <div class="form-group">
+          <label for="emailR" class="text-white">Correo</label>
+          <input type="text" id="emailR" class="form-control" placeholder="correo@correo.com">
+        </div>
+        <div class="form-group">
+          <label for="passR" class="text-white">Contraseña</label>
+          <input type="password" id="passR" class="form-control" placeholder="contraseña">
+        </div>
+        <div class="mt-4 col-md-12">
+          <button class="btn btn-primary btn-block" id="btnRegistro">Registrar</button>
+        </div>
+        <div class="row mt-4" id="avisosR"></div>
+        <div class="mt-4 col-md-12">
+          <button class="btn btn-warning btn-block" id="btnCan">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- Inicia Vista de Login -->
+  <div class="container" id="login">
+    <div class="row text-center">
+      <div class="col mt-5 mb-5 ">
+        <img src="iconos/icon-196x196.png" class="img-thumbnail">
+      </div>
+    </div>
+    <div class="row">
+      <form class="col-12">
+        <div class="form-group">
+          <label for="email" class="text-white">Correo</label>
+          <input type="text" id="email" class="form-control" placeholder="correo@correo.com">
+        </div>
+        <div class="form-group">
+          <label for="pass" class="text-white">Contraseña</label>
+          <input type="password" id="pass" class="form-control" placeholder="contraseña">
+        </div>
+        <div class="mt-4 col-md-12">
+          <button class="btn btn-primary btn-block" id="btnEntrar">Entrar</button>
+        </div>
+        <div class="row mt-4" id="avisos"></div>
+        <div class="mt-4 col-md-12">
+          <button class="btn btn-default btn-block" id="btnReg">Registro</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Inicia Vista de Controles -->
+  <div class="container" id="controles">
+    <div id="logo">
+    <!--   <img id="logoImg" src="img/logo.png"  > -->
+    </div>
+    <hr>
+    <!-- Comienza div de la tabla -->
+    <div class="row mt-2">
+      <div class="col-md-12 text-center">
+        <div class="outer-form">
+          <table class="table-striped table table-bordered vertical">
+            <!-- Encabezado de la tabla 3 columnas (Modulo, Lugar, Status) -->
+            <thead class="bg-bandw">
+              <tr>
+                <th>Modulo</th> 
+                <th>Lugar</th>
+                <th class="text-right">Status</th>
+              </tr>
+            </thead>
+            
+            <!-- Cuerpo de la Tabla -->
+            <tbody style="border:1px solid transparent; background-color:#242424; color:#A1A6AB; text-align: left;">
+              <!-- Fila 1 -->
+              <tr>
+                <td id="icono"><img src="img/foco.png" width="38px"><span id="desc"> Foco</span> </td>
+                <td id="desc">Sala</td>
+                <td class="text-right">
+                  <label class="switch">
+                    <input id="foco1" type="checkbox" >
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+              </tr>
+              <!-- Fila 2 -->
+              <tr>
+                <td id="icono"><img src="img/foco.png" width="38px"><span id="desc"> Foco2</span> </td>
+                <td id="desc">recamara</td>
+                <td class="text-right">
+                  <label class="switch">
+                    <input id="foco2" type="checkbox" >
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+              </tr>
+              <!-- Fila 3 -->
+              <tr>
+                <td><img class="movImg" src="img/sensor.png" width="35px"><span id="desc" class="mov"> Movimiento</span>  </td>
+                <td id="desc">Comedor</td>
+                <td class="text-right">
+                  <label class="switch">
+                    <input id="sensorMovimiento" type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+              </tr>
+              <tr>
+                <td id="icono"><img src="img/tv.png" width="38px"><span id="desc"> TV</span> </td>
+                <td id="desc">Sala</td>
+                <td class="text-right">
+                  <label class="switch">
+                    <input id="tv" type="checkbox" >
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- Termina div de tabla -->
+    <hr>
+    
+    <!-- Comienza Div de Dimmer -->
+    <div class="col-md-12 Preview">
+      <img id="icono_dim" src="img/foco.png" width="38px">
+      <span class="text-white">Dimmer</span>
+      <br><br>
+      <input id="dimvalue" class="sliderDim" type="range" min="33" max="255" value="50">
+    </div>  
+    
+    <hr>
+    
+    <!-- Div para Leer datos del sensor de temperatura -->
+    <div class="Preview">
+      <p class="text-white">Temperatura y Humedad</p>
+    
+        <div class="row" id="sensores">
+          <div class="col-xs-6 ">           
+            <div class="GaugeMeter" id="grados"  data-append=" C" data-size="140" data-theme="White" data-back="RGBa(0,0,0,.1)" data-animate_gauge_colors=true data-animate_text_colors=true data-width="15" data-label="Recamara " data-style="Arch" data-label_color="#FFF">
+            </div>
+          </div>
+
+          <div class="col-xs-6 ">
+            <div class="GaugeMeter" id="humedadMarca"  data-append=" H" data-size="140" data-theme="White" data-back="RGBa(0,0,0,.1)" data-animate_gauge_colors=true data-animate_text_colors=true data-width="15" data-label="Recamara" data-style="Arch" data-label_color="#FFF">
+            </div>
+          </div>
+        </div>
+    </div>
+      
+    <hr>
+
+    <!-- paleta de colores -->
+
+    <div class="wrap">
+      <p class="text-white">Tira de leds</p>
+    </div>
+        
+    <div class="wrap">
+      <div class="half">
+        <div class="wrapper"></div>
+      </div>
+      <div class="half readout"></div>
+    </div>
+    <!-- paleta de colores end-->
+
+        <!-- preloader
+    ================================================== -->
+    <div id="preloader" style="text-align: center;">
+      <div id="loader">
+        <img src="img/loader.gif" style="width: 110px">
+        <p class="text-white">Cargando...</p>
+           
+        <div class="line-scale-pulse-out">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>  
+
+ </div> <!-- paleta de colores end-->
+
+
+<div class="footer">
+   <div class="site-footer">
+    
+    <div class="row" >
+
+    </div>
+
+   </div>
+</div>
+
+<!-- asistente-->
+<div id="modal">
+<p id="resText"></p> 
+  <a class="intro-banner-vdo-play-btn pinkBg" target="_blank">
+    <i class="glyphicon glyphicon-play whiteText" aria-hidden="true"></i>
+    <span class="ripple pinkBg"></span>
+    <span class="ripple pinkBg"></span>
+    <span class="ripple pinkBg"></span>
+  </a>
+</div>
+
+<!-- <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+
+<script src="js/artyom.min.js"></script>
+<script src="js/artyomCommands.js"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/main.js"></script>
+<script src="appCon.js"></script>   <!-- necesario para app-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="js/GaugeMeter.js"></script>
+<script src='https://rawgit.com/jaames/iro.js/master/dist/iro.js'></script>
+<script src="js/typewriter.js"></script>
+<script src="js/laika.js"></script>
+<script src="js/auth/autentication.js"></script>
+<script src="js/auth/authController.js"></script>
+
+</body>
+</html>
