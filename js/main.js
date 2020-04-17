@@ -1,12 +1,12 @@
 
    var config = {
-    apiKey: "AIzaSyDEe4Hy4fvL1_GEUZ63sn3G40rC9D6XRsM",
-    authDomain: "proyecto-utt-1e787.firebaseapp.com",
-    databaseURL: "https://proyecto-utt-1e787.firebaseio.com",
-    projectId: "proyecto-utt-1e787",
-    storageBucket: "proyecto-utt-1e787.appspot.com",
-    messagingSenderId: "453011231943",
-    appId: "1:453011231943:web:53eed6ade86db8d3f19ae2"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
   };
 
   firebase.initializeApp(config);
